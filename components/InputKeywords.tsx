@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, ChangeEvent, KeyboardEvent } from "react";
-import styles from './InputKeywords.module.css';
 
 export default function InputKeywords() {
     const [valueTyped, setValueTyped] = useState<string>('');
@@ -20,22 +19,25 @@ export default function InputKeywords() {
     }
 
     return (
-        <div style={{ maxWidth: 400 }}>
-            <input 
-                type="text" 
-                value={valueTyped} 
+        <div className="max-w-[400px]">
+            <input
+                type="text"
+                value={valueTyped}
                 onChange={handleChange}
-                onKeyDown={handleKeyDown} 
-                placeholder="Digite palavras as chaves..."
-                className={styles.inputField}
+                onKeyDown={handleKeyDown}
+                placeholder="Digite palavras chaves..."
+                className="w-full p-2"
             />
-           <div className={styles.valueDisplayedBox}>
+            <div className="mt-3">
                 {valueDisplayed.map((value, index) => (
-                    <span key={index} className= {styles.valueDisplayed}>
+                    <span
+                        key={index}
+                        className="mr-2 mb-2 px-2 py-1 border border-gray-300 rounded inline-block bg-gray-50 text-sm text-gray-700"
+                    >
                         {value}
                     </span>
                 ))}
-           </div>
+            </div>
         </div>
     );
 }

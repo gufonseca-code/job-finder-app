@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, ChangeEvent, KeyboardEvent } from "react";
+import { Input } from "./ui/Input";
 
 export default function InputKeywords() {
     const [valueTyped, setValueTyped] = useState<string>('');
@@ -20,13 +21,11 @@ export default function InputKeywords() {
 
     return (
         <div className="max-w-[400px]">
-            <input
-                type="text"
+            <Input
                 value={valueTyped}
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
                 placeholder="Digite palavras chaves..."
-                className="w-full p-2"
             />
             <div className="mt-3">
                 {valueDisplayed.map((value, index) => (

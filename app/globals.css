@@ -1,36 +1,21 @@
 @import "tailwindcss";
 
-
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --primary: 222.1 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --radius: 0.5rem;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased font-sans leading-relaxed;
+    @apply bg-white text-gray-900 antialiased font-sans min-h-screen flex flex-col;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-gray-800;
-  }
-
-  h1 { @apply text-4xl mb-6; }
-  h2 { @apply text-3xl mb-5; }
-  h3 { @apply text-2xl mb-4; }
-}
-
-a {
-  @apply text-blue-600 hover:text-blue-800 no-underline;
-}
-
-button {
-  @apply bg-blue-600 text-white font-semibold px-4 py-2 rounded hover:bg-blue-700 transition;
-}
-
-input, textarea, select {
-  @apply border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
-}
-
-p {
-  @apply mb-4;
 }

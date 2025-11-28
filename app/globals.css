@@ -1,14 +1,36 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand: #23545b;
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: #F9F8F6;
+    --foreground: #2D3748;
 
-    --primary: 222.1 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --card: #FFFFFF;
+    --card-foreground: #2D3748;
+    --border: #E2E8F0;
 
-    --radius: 0.5rem;
+    --primary: #23545b;
+    --primary-foreground: #FFFFFF;
+  }
+
+  .dark {
+    --background: #021a1e;
+    --foreground: #FFFFFF;
+    --muted-foreground: #A0aEC0;
+
+    --card: #072C33;
+    --card-foreground: #FFFFFF;
+    
+    --border: #134E48;
+
+    --primary: #2DD4BF;
+    --primary-foreground: #021a1e;
   }
 
   html {
@@ -16,6 +38,6 @@
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased font-sans min-h-screen flex flex-col;
+    @apply bg-[--background] text-[--foreground] antialiased font-sans min-h-screen flex flex-col transition-colors duration-300;
   }
 }

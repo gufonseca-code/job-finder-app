@@ -20,7 +20,7 @@ export default function InputKeywords() {
     }
 
     return (
-        <div className="max-w-[400px]">
+        <div className="w-full">
             <Input
                 value={valueTyped}
                 onChange={handleChange}
@@ -31,7 +31,9 @@ export default function InputKeywords() {
                 {valueDisplayed.map((value, index) => (
                     <span
                         key={index}
-                        className="mr-2 mb-2 px-2 py-1 border border-gray-300 rounded inline-block bg-gray-50 text-sm text-gray-700"
+                        className="mr-2 mb-2 px-3 py-1 rounded-full text-sm font-medium border inline-block transition-colors
+                                   bg-gray-100 text-gray-700 border-gray-200
+                                   dark:bg-[#09363d] dark:text-(--primary) dark:border-[#134E48]"
                     >
                         {value}
                     </span>
